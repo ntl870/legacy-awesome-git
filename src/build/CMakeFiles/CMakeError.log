@@ -1,0 +1,32 @@
+Determining if the round exist failed with the following output:
+Change Dir: /home/ntl870/awesome-git/src/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_cba29/fast && /usr/bin/make  -f CMakeFiles/cmTC_cba29.dir/build.make CMakeFiles/cmTC_cba29.dir/build
+make[1]: Entering directory '/home/ntl870/awesome-git/src/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cba29.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=2,-D_GLIBCXX_ASSERTIONS         -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection  -o CMakeFiles/cmTC_cba29.dir/CheckSymbolExists.c.o -c /home/ntl870/awesome-git/src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_cba29
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cba29.dir/link.txt --verbose=1
+/usr/bin/cc -march=x86-64 -mtune=generic -O2 -pipe -fno-plt -fexceptions         -Wp,-D_FORTIFY_SOURCE=2,-D_GLIBCXX_ASSERTIONS         -Wformat -Werror=format-security         -fstack-clash-protection -fcf-protection  -Wl,-O1,--sort-common,--as-needed,-z,relro,-z,now  -rdynamic CMakeFiles/cmTC_cba29.dir/CheckSymbolExists.c.o -o cmTC_cba29 
+/usr/bin/ld: CMakeFiles/cmTC_cba29.dir/CheckSymbolExists.c.o: in function `main':
+CheckSymbolExists.c:(.text.startup+0x7): undefined reference to `round'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_cba29.dir/build.make:99: cmTC_cba29] Error 1
+make[1]: Leaving directory '/home/ntl870/awesome-git/src/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_cba29/fast] Error 2
+
+
+File /home/ntl870/awesome-git/src/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <math.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef round
+  return ((int*)(&round))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
